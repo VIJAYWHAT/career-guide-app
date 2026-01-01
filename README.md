@@ -15,9 +15,13 @@ npm run dev
 npm run build
 ```
 
-Output is in `dist/`, configured for base path `/career-guide-app/`.
+Output is in `dist/`. The app uses relative paths so it works when served from any subpath (e.g. `/career-guide-app/`).
 
-## Deploy to GitHub Pages (https://vijayraja.me/career-guide-app/)
+## Deploy to https://vijayraja.me/career-guide-app/
+
+**Important:** The URL must serve the **built app** (contents of the `dist/` folder), not the source code. If you deploy the repo root or source files, the browser will request `/src/main.tsx` and get 404.
+
+### Option A: GitHub Actions (recommended)
 
 1. **Enable GitHub Pages with Actions**
 
@@ -26,11 +30,17 @@ Output is in `dist/`, configured for base path `/career-guide-app/`.
 
 2. **Deploy**
 
-   - Push to the `main` branch; the **Deploy to GitHub Pages** workflow will build and deploy.
-   - Or run the workflow manually: **Actions → Deploy to GitHub Pages → Run workflow**
+   - Push to the `main` branch; the workflow builds and deploys the **dist** output.
+   - Or run manually: **Actions → Deploy to GitHub Pages → Run workflow**
 
 3. **Custom domain**
-   - If the site is served at `https://vijayraja.me/career-guide-app/`, ensure your server or GitHub Pages custom domain is set so that path serves this app. The app is built with base `/career-guide-app/` so all routes and assets work under that path.
+   - If the site lives at `https://vijayraja.me/career-guide-app/`, point that path to the GitHub Pages deployment (or copy the **contents of `dist/`** into that directory on your server).
+
+### Option B: Manual or other host
+
+1. Run `npm run build`.
+2. Upload **only the contents of the `dist/` folder** to your server so they are served at `https://vijayraja.me/career-guide-app/` (e.g. the file `dist/index.html` should be at `.../career-guide-app/index.html`, and `dist/assets/` at `.../career-guide-app/assets/`).
+3. Do **not** deploy the repo root or `index.html` from the project root; that is the unbuilt source and will break.
 
 ## Project structure
 
