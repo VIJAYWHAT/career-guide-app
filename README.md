@@ -42,6 +42,20 @@ Output is in `dist/`. The app uses relative paths so it works when served from a
 2. Upload **only the contents of the `dist/` folder** to your server so they are served at `https://vijayraja.me/career-guide-app/` (e.g. the file `dist/index.html` should be at `.../career-guide-app/index.html`, and `dist/assets/` at `.../career-guide-app/assets/`).
 3. Do **not** deploy the repo root or `index.html` from the project root; that is the unbuilt source and will break.
 
+### Netlify / Vercel
+
+The repo includes `netlify.toml` and `vercel.json` so that **Build command** = `npm run build` and **Publish/Output directory** = `dist`. Use the default settings (or leave these files in place) so the live site serves the built app, not the source.
+
+### Troubleshooting: 404 for `/src/main.tsx`
+
+If the live site shows a 404 for `/src/main.tsx` or the page is blank, the server is serving the **source** `index.html` instead of the **built** one.
+
+- **Fix:** Set your host’s **publish / output directory** to **`dist`** (not `.` or the repo root). Then trigger a new build and redeploy.
+- **GitHub Pages:** Use the “Deploy to GitHub Pages” workflow (Source = GitHub Actions); it deploys only `dist/`.
+- **Netlify:** In Site settings → Build & deploy → Build, set “Publish directory” to `dist` (or rely on `netlify.toml`).
+- **Vercel:** Set “Output Directory” to `dist` (or rely on `vercel.json`).
+- **Manual:** Upload the **contents** of the `dist/` folder (after `npm run build`) to the folder that is served at your app URL.
+
 ## Project structure
 
 - `src/pages/` – Home, Departments, Jobs, Resources, Career Quiz

@@ -35,6 +35,14 @@ jobs:
       - name: Build
         run: npm run build
 
+      - name: Verify build output (must not contain source script)
+        run: |
+          if grep -q "main.tsx" dist/index.html; then
+            echo "ERROR: dist/index.html still references main.tsx. The server must serve the contents of dist/, not the source."
+            exit 1
+          fi
+          echo "Build OK: index.html uses bundled assets."
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3.0.1
         with:
