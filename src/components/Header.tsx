@@ -20,7 +20,7 @@ const Header = () => {
         <div className="flex justify-between items-center h-16">
           <Link to="/" className="flex items-center space-x-2">
             <GraduationCap className="h-8 w-8 text-blue-600" />
-            <span className="text-xl font-bold text-gray-900">BCA Career Guide</span>
+            <span className="text-xl font-bold text-gray-900">Career Guide</span>
           </Link>
 
           {/* Desktop Navigation */}

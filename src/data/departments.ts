@@ -77,7 +77,7 @@ export const departments: Department[] = [
       }
     },
     howToStart: {
-      education: ['BCA with programming focus', 'Online courses (Coursera, Udemy)', 'Coding bootcamps', 'Self-learning'],
+      education: ['Computer Science with programming focus', 'Online courses (Coursera, Udemy)', 'Coding bootcamps', 'Self-learning'],
       projects: ['E-commerce website', 'Task management app', 'Weather dashboard', 'Social media platform'],
       internships: ['TCS', 'Infosys', 'Wipro', 'Zoho', 'Local startups'],
       freelancing: ['Upwork', 'Fiverr', 'Freelancer', 'Toptal', 'Local client projects']
