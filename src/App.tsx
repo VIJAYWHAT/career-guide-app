@@ -12,7 +12,11 @@ import Contact from "./pages/Contact";
 
 function App() {
   return (
+<<<<<<< HEAD
     <Router basename={import.meta.env.BASE_URL}>
+=======
+    <Router basename='/'>
+>>>>>>> a0a939aa4988a5751decda98a91d4a37ef0cc8c5
       <div className='min-h-screen bg-gray-50'>
         <Header />
         <main>
