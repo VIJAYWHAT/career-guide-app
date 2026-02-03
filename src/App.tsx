@@ -12,7 +12,7 @@ import Contact from "./pages/Contact";
 
 function App() {
   return (
-    <Router basename='/career-guide-app'>
+    <Router basename='/'>
       <div className='min-h-screen bg-gray-50'>
         <Header />
         <main>
