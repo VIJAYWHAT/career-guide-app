@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://vijaywhat.github.io/career-guide-app",
+  "homepage": "https://vijayraja.me/career-guide-app/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
